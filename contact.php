@@ -9,6 +9,7 @@
     <link href="css/custom.css" rel="stylesheet">
     <!-- Lightbox -->
     <link href="css/lightbox.css" rel="stylesheet">
+    <link href="css/validator.css" rel="stylesheet">
     <!-- Google Analytics -->
     <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -55,11 +56,11 @@
             </div>
             <div class="collapse navbar-collapse" id="collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="gallery.html">Photo Gallery</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="active"><a href="contact.html">Contact Us</a></li>  
+                    <li id="index"><a href="index.html">Home</a></li>
+                    <li id="services"><a href="services.html">Services</a></li>
+                    <li id="gallery"><a href="gallery.html">Photo Gallery</a></li>
+                    <li id="about"><a href="about.html">About Us</a></li>
+                    <li id="contact" class="active"><a href="contact.html">Contact Us</a></li>  
                 </ul>
             </div>
         </nav>
@@ -67,10 +68,38 @@
     <!-- Start of page content -->
     <div class="row">
         <div class="col-xs-12">
-            <h1>This page is currently under maintenance!</h1>
+            <form name="contactform" action="post" action="send_email_form.php" data-toggle="validator">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" class="form-control" pattern="^[A-Za-z .'-]+$" data-minlength="2" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="email_address">Email Address</label>
+                    <input type="email" class="form-control" name="email_address" placeholder="you@example.com">
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="text" class="form-control" name="phone_number">
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <label for="contact_pref">Preferred Method of Contact</label>
+                    <select name="contact_pref" class="form-control">
+                        <option value="either">No Preference</option>
+                        <option value="phone">Phone Call</option>
+                        <option value="email">Email</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" class="form-control" data-minlength="3" required></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
     </div>
-
-    <!-- End of page content -->
     
     <!-- footer -->
     <footer class="row">
@@ -92,7 +121,6 @@
 <script src="js/jquery-3.1.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/lightbox.js"></script>
-
 
 </body>
 </html>
