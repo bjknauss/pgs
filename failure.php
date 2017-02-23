@@ -8,7 +8,7 @@
     <!-- Start of page content -->
     <div class="row">
         <div class="col-xs-12">
-            <h3>Submitted successfully. Thank you for contacting us.</h3>
+            <h3>Something went wrong while trying to send your email!</h3>
         </div>    
     </div>
     
