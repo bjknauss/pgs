@@ -125,6 +125,6 @@ $(function(){
     $("#gallery").addClass("active");
 });
 </script>
-<?php include_once("js_include.php"); ?>
+<?php include_once("js_includes.php"); ?>
 </body>
 </html>
